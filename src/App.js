@@ -10,7 +10,7 @@ function App() {
   const onSubmit = async () => {
     try {
       const resp = await executeRecaptcha('reset')
-      const resp2 = await axios.get('http://dreamdo-dev.eu-west-1.elasticbeanstalk.com/api/categories?lan=es&active=1&menu=1&root=1&include_childs=1')
+      const resp2 = await axios.get('https://dreamdo-dev.eu-west-1.elasticbeanstalk.com/_status')
       console.log('resp2 :>> ', resp2);
       setValueCaptcha(resp)
       console.log('resp :>> ', resp);
