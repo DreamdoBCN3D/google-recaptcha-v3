@@ -10,24 +10,38 @@ function App() {
   const onSubmit = async () => {
     try {
       const resp = await executeRecaptcha('reset')
-      const resp2 = await axios.get('https://dreamdo-dev.eu-west-1.elasticbeanstalk.com/_status')
-      console.log('resp2 :>> ', resp2);
       setValueCaptcha(resp)
-      console.log('resp :>> ', resp);
+      console.log('Recaptcha :>> ', resp);
     } catch (error) {
       console.log('error :>> ', error);
       
     }
   }
 
+  const onSubmit2 = async () => {
+    try {
+      const resp2 = await axios.get('https://dreamdo-dev.eu-west-1.elasticbeanstalk.com/_status')
+      console.log('resp2 :>> ', resp2);
+    } catch (error) {
+      console.log('error :>> ', error);      
+    }
+  }
+
   return (
     <div className="App">
+      <br/>
+      <br/>
       <button onClick={() => onSubmit()}>
-          Submit (with onChange prop)
+          Submit Recaptcha
         </button>
         {valueCaptcha && (
           <div>{valueCaptcha}</div>
         )}
+      <br/>
+      <br/>
+      <button onClick={() => onSubmit2()}>
+          TEST API
+        </button>
     </div>
   );
 }
