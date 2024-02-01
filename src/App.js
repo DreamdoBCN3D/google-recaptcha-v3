@@ -20,7 +20,7 @@ function App() {
 
   const onSubmit2 = async () => {
     try {
-      const resp2 = await axios.get('https://dreamdo-dev.eu-west-1.elasticbeanstalk.com/_status')
+      const resp2 = await axios.get('https://api.dreamdo.es/_status')
       console.log('resp2 :>> ', resp2);
     } catch (error) {
       console.log('error :>> ', error);      
